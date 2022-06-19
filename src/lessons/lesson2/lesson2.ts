@@ -72,6 +72,24 @@ console.log('lesson 2')
 // 5) superSum(3)(2,5)(3) //10
 // 6) superSum(3)(2,5)(3,9) //10
 
+// const superSum = (num) => {
+//   if (num <= 0) return 0
+//   if (num === 1) return (n) => n
+//
+//   let outerParams = []
+//
+//   function inner(...arg) {
+//     outerParams = [...outerParams, ...arg]
+//     if (outerParams.length >= num) {
+//       outerParams.length = num
+//       return outerParams.reduce((acc, number) => acc + number)
+//     } else {
+//       return inner
+//     }
+//   }
+//   return inner
+// }
+
 // P.S. типизируйте только аргументы, а при вызове функции используйте @ts-ignore
 
 // Task 05
@@ -79,6 +97,17 @@ console.log('lesson 2')
 
 // Task 06
 // написать функцию, которая повторяет функционал метода flat массива на всю глубину.
+
+// const flat = (arr) => {
+//   let result = []
+//
+//   function inner(arr) {
+//     arr.map((el) => (Array.isArray(el) ? inner(el) : result.push(el)))
+//   }
+//
+//   inner(arr)
+//   return result
+// }
 
 // just a plug
 export default () => {
