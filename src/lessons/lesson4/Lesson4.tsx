@@ -7,16 +7,17 @@ const onCreatePromise = () => {
     handlePromise.resolve = res
     handlePromise.reject = rej
   })
+  handlePromise.promise
+    .then(handlePromise.onSuccess)
+    .catch(handlePromise.onError)
 }
 
 const onResolvePromise = () => {
-  handlePromise.resolve('resolved promise data')
-  handlePromise.promise.then((data: string) => handlePromise.onSuccess(data))
+  handlePromise.resolve && handlePromise.resolve('resolved promise data')
 }
 
 const onRejectPromise = () => {
-  handlePromise.reject('rejected promise error')
-  handlePromise.promise.catch((err: string) => handlePromise.onError(err))
+  handlePromise.resolve && handlePromise.reject('rejected promise error')
 }
 
 const Lesson4 = () => {

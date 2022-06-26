@@ -10,14 +10,20 @@ const Lesson3 = () => {
 
   const searchFilm = () => {
     API.searchFilmsByTitle(searchName)
-      .then(data => setSearchResult(JSON.stringify(data)))
+      .then(({data}) => {
+        const {Error, Response} = data
+        Response === 'True' ? setSearchResult(JSON.stringify(data)) : setSearchResult(Error)
+      })
     setSearchName('')
   }
 
   const searchByType = (e: React.MouseEvent<HTMLButtonElement>) => {
     const type: string = e.currentTarget.dataset.t ? e.currentTarget.dataset.t : ''
     API.searchFilmsByType(searchNameByType, type)
-      .then(data => setSearchResultByType(JSON.stringify(data)))
+      .then(({data}) => {
+        const {Error, Response} = data
+        Response === 'True' ? setSearchResultByType(JSON.stringify(data)) : setSearchResultByType(Error)
+      })
   }
 
   return (
