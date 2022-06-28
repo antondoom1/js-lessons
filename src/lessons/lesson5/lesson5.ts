@@ -130,13 +130,13 @@ console.log('Lesson 5')
 
 // let helperObj = {
 //   changeName(name) {
-//     this._name = name
+//     this.name = name
 //   },
 //   setAge(age) {
-//     this._age = age
+//     this.age = age
 //   },
 //   greeting() {
-//     console.log(`Hello, my name is ${this._name}`)
+//     console.log(`Hello, my name is ${this.name}`)
 //   }
 // }
 
@@ -154,11 +154,56 @@ console.log('Lesson 5')
 
 // 2) Напишите функцию которая принимает первым аргументом объект One, а вторым helperObj. Данная функция
 // возвращает другую функцию которая принимает строку в качестве аргумента и устанавливает ее свойству name объекта One
+
+// function changeName(firstObj, helperObj) {
+//   return function(newName) {
+//     helperObj.changeName.bind(firstObj ,newName)()
+//   }
+// }
+//
+// let newObj = changeName(One, helperObj)('Anton')
+// console.log(One)
+// helperObj.greeting.bind(One)()
+
 // 3) Одной строкой установить с помощью helperObj объекту Two поле age в значение 30
+
+// helperObj.setAge.bind(Two, 30)()
+// console.log(Two)
+
 // 4) Создать метод hi у объекта One, который всегда вызывает метод greeting объекта helperObj от имени Two
+
+// One.hi = function() {
+//   helperObj.greeting.bind(Two)()
+// }
+//
+// One.hi()
 
 // Реализовать задачи 2-4 из Bind с помощью Call
 
+// 2)
+//
+// function changeName(firstObj, helperObj) {
+//   return function(newName) {
+//     helperObj.changeName.call(firstObj ,newName)
+//   }
+// }
+//
+// let newObj = changeName(One, helperObj)('Anton')
+// console.log(One)
+// helperObj.greeting.call(One)
+
+// 3)
+//
+// helperObj.setAge.call(Two, 30)
+// console.log(Two)
+
+// 4)
+//
+// One.hi = function() {
+//   helperObj.greeting.call(Two)
+// }
+//
+// One.hi()
 
 // just a plug
 export default () => {
