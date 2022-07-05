@@ -1,4 +1,4 @@
-console.log('Lesson 6');
+console.log('Lesson 6')
 
 // Class
 // https://learn.javascript.ru/classes
@@ -34,6 +34,37 @@ console.log('Lesson 6');
 // Создать класс машина - имеющий марку, число цилиндров, мощность. Определить конструктор и функцию печати.
 // Создать производный класс – грузовик, имеющий грузоподъемность кузова.
 // Определить функции переназначения марки и грузоподъемности.
+
+// class Car {
+//   constructor(public brand: string, public cylinders: number, public power: number) {
+//     this.brand = brand
+//     this.cylinders = cylinders
+//     this.power = power
+//   }
+//
+//   getCar() {
+//     return `${this.brand}: ${this.cylinders} cylinders, power: ${this.power} hp`
+//   }
+//
+// }
+//
+// class Truck extends Car {
+//   constructor(public brand: string, public cylinders: number, public power: number, public bodyLoadCapacity: number) {
+//     super(brand, cylinders, power)
+//   }
+//
+//   set newBrand(value: string) {
+//     this.brand = value
+//   }
+//
+//   set newCapacity(value: number) {
+//     this.bodyLoadCapacity = value
+//   }
+//
+// }
+//
+// const bmw = new Car('BMW', 4, 410)
+// const iveco = new Car('IVECO', 12, 1200)
 
 // just a plug
 export default () => {
