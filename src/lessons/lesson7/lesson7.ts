@@ -1,4 +1,4 @@
-console.log('Lesson 7');
+console.log('Lesson 7')
 
 // __Proto__
 // https://learn.javascript.ru/prototype-inheritance
@@ -19,6 +19,26 @@ console.log('Lesson 7');
 // метода walk, eat, sleep - каждый метод должен выводить в консоль строку имя + действие. Пример:
 // walk => `${this.name} walking`
 // проверить, что методы работают
+
+class Animal {
+  public name = 'Animal'
+
+  constructor(name: string) {
+    this.name = name
+  }
+
+  walk() {
+    console.log(`${this.name} walking`)
+  }
+
+  eat() {
+    console.log(`${this.name} eating`)
+  }
+
+  sleep() {
+    console.log(`${this.name} sleeping`)
+  }
+}
 
 
 //Task 02
@@ -42,4 +62,5 @@ console.log('Lesson 7');
 
 
 // just a plug
-export default () => {};
+export default () => {
+};
