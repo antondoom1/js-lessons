@@ -20,25 +20,25 @@ console.log('Lesson 7')
 // walk => `${this.name} walking`
 // проверить, что методы работают
 
-class Animal {
-  public name = 'Animal'
-
-  constructor(name: string) {
-    this.name = name
-  }
-
-  walk() {
-    console.log(`${this.name} walking`)
-  }
-
-  eat() {
-    console.log(`${this.name} eating`)
-  }
-
-  sleep() {
-    console.log(`${this.name} sleeping`)
-  }
-}
+// class Animal {
+//   public name = 'Animal'
+//
+//   constructor(name: string) {
+//     this.name = name
+//   }
+//
+//   walk() {
+//     console.log(`${this.name} walking`)
+//   }
+//
+//   eat() {
+//     console.log(`${this.name} eating`)
+//   }
+//
+//   sleep() {
+//     console.log(`${this.name} sleeping`)
+//   }
+// }
 
 
 //Task 02
