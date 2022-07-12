@@ -13,6 +13,8 @@ console.log('Lesson 7')
 // https://www.youtube.com/watch?v=aQkgUUmUJy4&t=21s
 // https://www.youtube.com/watch?v=b55hiUlhAzI
 
+// https://developer.mozilla.org/ru/docs/Learn/JavaScript/Objects/Object_prototypes
+
 
 //Task 01
 // Реализовать класс Animal который принимает name(по умолчанию 'Animal') в качестве параметра, у которого будет 3
@@ -42,7 +44,7 @@ console.log('Lesson 7')
 
 
 //Task 02
-// Реализовать класс Monkey на базе класса Animal,  конструктор принимает name(по умолчанию 'Monkey') в качестве
+// Реализовать класс Monkey на базе класса Animal, конструктор принимает name(по умолчанию 'Monkey') в качестве
 // параметра, реализовать методы roar и climb аналогично классу Animal
 // проверить, что все методы работают
 
@@ -60,6 +62,19 @@ console.log('Lesson 7')
 // Task 05
 // Используя метод Apply реализовать свой собственный метод bind
 
+// Function.prototype.myBind = function (ctx, ...args) {
+//   const that = this
+//   return function (...args2) {
+//     return that.apply(ctx, [...args, ...args2])
+//   }
+// }
+
+// Function.prototype.myBindWithoutApply = function (ctx, ...args) {
+//   ctx.newProperty = this
+//   return function (...args2) {
+//     return ctx.newProperty(...args, ...args2)
+//   }
+// }
 
 // just a plug
 export default () => {
