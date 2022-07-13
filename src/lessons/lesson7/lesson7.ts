@@ -42,22 +42,106 @@ console.log('Lesson 7')
 //   }
 // }
 
-
 //Task 02
 // Реализовать класс Monkey на базе класса Animal, конструктор принимает name(по умолчанию 'Monkey') в качестве
 // параметра, реализовать методы roar и climb аналогично классу Animal
 // проверить, что все методы работают
 
+// class Monkey extends Animal {
+//   public name = 'Monkey'
+//
+//   constructor(name: string) {
+//     super(name)
+//     this.name = name
+//   }
+//
+//   roar() {
+//     console.log(`${this.name} is roaring`)
+//   }
+//
+//   climb() {
+//     console.log(`${this.name} is climbing`)
+//   }
+// }
 
 //Task 03
 // Реализовать класс Human на базе класса Monkey, конструктор принимает name(по умолчанию 'Human') в качестве
 // параметра, реализовать методы speak и think аналогично классу Animal
 // проверить, что все методы работают
 
+// class Human extends Monkey {
+//   public name = 'Human'
+//
+//   constructor(name: string) {
+//     super(name)
+//     this.name = name
+//   }
+//
+//   speak() {
+//     console.log(`${this.name} is speaking`)
+//   }
+//
+//   think() {
+//     console.log(`${this.name} is thinking`)
+//   }
+// }
 
 // Task 04
 // Реализовать таски 01-03 через функции конструкторы в отдельном JS файле, реализовать наследование
 
+// function Animal(name = 'Animal') {
+//   this.name = name
+// }
+//
+// Animal.prototype.walk = function () {
+//   console.log(`${this.name} is walking`)
+// }
+// Animal.prototype.eat = function () {
+//   console.log(`${this.name} is eating`)
+// }
+// Animal.prototype.sleep = function () {
+//   console.log(`${this.name} is sleeping`)
+// }
+//
+// function Monkey(name = 'Monkey') {
+//   Animal.call(this, name)
+// }
+//
+// Monkey.prototype = Object.create(Animal.prototype, {
+//   constructor: {
+//     value: Monkey,
+//   },
+//   roar: {
+//     value: function () {
+//       console.log(`${this.name} is roaring`)
+//     },
+//   },
+//   climb: {
+//     value: function () {
+//       console.log(`${this.name} is climbing`)
+//     },
+//   },
+// })
+//
+// function Human(name = 'Human') {
+//   Animal.call(this, name)
+// }
+//
+// Human.prototype = Object.create(Monkey.prototype, {
+//   constructor: {
+//     value: Human,
+//   },
+//   speak: {
+//     value: function () {
+//       console.log(`${this.name} is speaking`)
+//     },
+//   },
+//   think: {
+//     value: function () {
+//       console.log(`${this.name} is thinking`)
+//     },
+//   },
+// })
 
 // Task 05
 // Используя метод Apply реализовать свой собственный метод bind
