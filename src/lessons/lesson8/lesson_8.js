@@ -1,71 +1,147 @@
 // Task 1
 // Есть некоторая строка (const str = 'fgfggg';), что будет, если мы возьмем str[0]
 
+// 'f'
+
 // Task 2
 // Реализуйте необходимый код, что бы выражение (2).plus(3).minus(1) сработало и вернуло 4
 
+// Number.prototype.plus = function (n) {
+// 	return this + n
+// }
+//
+// Number.prototype.minus = function (n) {
+// 	return this - n
+// }
+
 // Task 3
 // Реализуйте функцию, которая принимает следующие аргументы (строки) '*', '1', 'b', '1c', и возвращает строку '1*b*1c'
+
+// const glueString = (...str) => {
+// 	let separator = str.splice(0, 1)
+// 	return str.join(separator)
+// }
 
 // Task 4
 // Напишите функцию которая найдет сумму всех вершин в структуре данны типа tree
 // Рекурсивно
 // В цикле
 
-const tree = {
-	valueNode: 3,
-	next: [{
-		valueNode: 1,
-		next: null
-	},
-		{
-			valueNode: 3,
-			next: null
-		},
-		{
-			valueNode: 2,
-			next: null
-		},
-		{
-			valueNode: 2,
-			next: [
-				{
-					valueNode: 1,
-					next: null
-				},
-				{
-					valueNode: 5,
-					next: null
-				}
-			]
-		}]
-};
+// const tree = {
+// 	valueNode: 3,
+// 	next: [{
+// 		valueNode: 1,
+// 		next: null
+// 	},
+// 		{
+// 			valueNode: 3,
+// 			next: null
+// 		},
+// 		{
+// 			valueNode: 2,
+// 			next: null
+// 		},
+// 		{
+// 			valueNode: 2,
+// 			next: [
+// 				{
+// 					valueNode: 1,
+// 					next: null
+// 				},
+// 				{
+// 					valueNode: 5,
+// 					next: null
+// 				}
+// 			]
+// 		}]
+// };
+//
+// const sumOfValuesRecursive = (obj) => {
+// 	let result = obj.valueNode
+//
+// 	if (obj.next) {
+// 		obj.next.forEach((v) => {
+// 			result += sumOfValuesRecursive(v)
+// 		})
+// 	}
+//
+// 	return result
+// }
+//
+// const sumOfValuesLoop = (obj) => {
+// 	let result = 0
+// 	let queue = [obj]
+//
+// 	while (queue.length) {
+// 		const current = queue.pop()
+//
+// 		result += current.valueNode
+//
+// 		if (current.next) {
+// 			current.next.forEach((v) => queue.push(v))
+// 		}
+// 	}
+//
+// 	return result
+// }
 
 // Task 5
 // исправить код, что бы работал правильно
 
-for (var i = 0; i < 10; i++) {
-	setTimeout(function () {
-		console.log(i);
-	}, 100);
-}
+// for (var i = 0; i < 10; i++) {
+// 	setTimeout(function () {
+// 		console.log(i);
+// 	}, 100);
+// }
+//
+// for (let i = 0; i < 10; i++) {
+// 	setTimeout(function () {
+// 		console.log(i)
+// 	}, 100)
+// }
+
+// for (var i = 0; i < 10; i++) {
+// 	;(function (j) {
+// 		setTimeout(function () {
+// 			console.log(j)
+// 		}, 100)
+// 	})(i)
+// }
+
+// for (var i = 0; i < 10; i++) {
+// 	const j = i
+// 	setTimeout(function () {
+// 		console.log(j)
+// 	}, 100)
+// }
 
 // Task 6
 // Реализуйте функцию Foo, что бы все корректно работало
 
-function Book(name, author) {
-	this.name = name;
-	this.author = author;
-	return this;
-}
+// function Book(name, author) {
+// 	this.name = name;
+// 	this.author = author;
+// 	return this;
+// }
+//
+// function Foo(constructor, name, author) {
+// 	return new constructor(name, author)
+// }
 
-// function Foo(Book, 'Учебник javascript', 'Петр Сергеев')
 //
 // var book = Foo(Book, 'js', 'petr');
-// console.log(book.name);
+// console.log(book.name); // 'js'
 
 // Task 7
 // Реализовать функцию f: f(2, 3) -> 5, при вызове f(2)(3), тоже вернет 5
+
+// const f = (...args) => {
+// 	if (args.length > 1) return args.reduce((acc, el) => acc + el)
+// 	const el = args[0]
+// 	return (...args2) => {
+// 		return el + args2.reduce((acc, el) => acc + el)
+// 	}
+// }
 
 // Task 8
 // Реализовать функцию f: f(1)(2)(3)() -> 6, f(0)(3)(1)(5)() -> 8
