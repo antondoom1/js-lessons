@@ -146,14 +146,82 @@
 // Task 8
 // Реализовать функцию f: f(1)(2)(3)() -> 6, f(0)(3)(1)(5)() -> 8
 
+// const f = (n = 0) => {
+// 	let result = n
+//
+// 	return function (carryingN) {
+// 		if (!carryingN) {
+// 			return result
+// 		} else {
+// 			return f(carryingN + result)
+// 		}
+// 	}
+// }
+
 // Task 9
 // Реализовать функции seven, plus, one, five, minus, two так, что бы следующие вызовы работали seven(plus(one())) -> 8. five(minus(two())) -> 3
+
+// const one = (value) => {
+//   return value ? value + 1 : 1
+// }
+
+// const two = (value) => {
+//   return value ? value + 2 : 2
+// }
+
+// const seven = (value) => {
+//   return value ? value + 7 : 7
+// }
+
+// const plus = (value) => {
+//   return value
+// }
+
+// const minus = (value) => {
+//   return -value
+// }
+
+// console.log(seven(plus(one()))) // -> 8
+// console.log(seven(minus(two()))) // -> 5
 
 // Task 10
 // Реализовать функцию сортировки массива пузырьком
 
+// const bubbleSort = (arr) => {
+// 	for (let i = 0; i < arr.length - 1; i++) {
+// 		let isSorted = true
+// 		for (let j = 0; j < arr.length - 1 - i; j++) {
+// 			if (arr[j] > arr[j + 1]) {
+// 				isSorted = false
+// 				;[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+// 			}
+// 		}
+// 		if (isSorted) break
+// 	}
+// 	return arr
+// }
+
 // Task 11
 // Есть строка, состоящая из разных скобок - str = "())({}}{()][][", написать функцию проверки закрыты ли все.
+
+// function isBalanced(str) {
+//   let br = '(){}[]'
+//   let st = []
+//   for (let i = 0; i < str.length; ++i) {
+//     let ch = str[i]
+//     let ind = br.indexOf(ch)
+//     if (ind >= 0) {
+//       if (ind & 1) {
+//         if (!st.length) return false
+//         let last_br = st.pop()
+//         if (last_br != br[ind - 1]) return false
+//       } else {
+//         st.push(ch)
+//       }
+//     }
+//   }
+//   return !st.length
+// }
 
 // Task 12
 // Необходимо написать функцию, принимающую в аргументах массив целых чисел и возвращающую новый массив, состоящий только из уникальных значений первого массива.
@@ -167,24 +235,24 @@
 // getTreeValues(tree); // => [1, 2, 3, 4, 5, 6, 7]
 
 const tree2 = {
-	value: 1,
-	children: [
-		{
-			value: 2,
-			children: [
-				{ value: 4 },
-				{ value: 5 },
-			]
-		},
-		{
-			value: 3,
-			children: [
-				{ value: 6 },
-				{ value: 7 },
-			]
-		}
-	]
-};
+  value: 1,
+  children: [
+    {
+      value: 2,
+      children: [
+        {value: 4},
+        {value: 5}
+      ]
+    },
+    {
+      value: 3,
+      children: [
+        {value: 6},
+        {value: 7}
+      ]
+    }
+  ]
+}
 
 // Task 15
 // Необходимо написать функцию, возвращающую сумму всех вершин дерева из Task 14
@@ -225,13 +293,13 @@ const tree2 = {
 // Что выведет консоль?
 
 Promise
-	.resolve()
-	.then(() => console.log(1))
-	.then(() => console.log(2))
-	.then(() => console.log(3));
+  .resolve()
+  .then(() => console.log(1))
+  .then(() => console.log(2))
+  .then(() => console.log(3))
 
 Promise
-	.resolve()
-	.then(() => console.log(4))
-	.then(() => console.log(5))
-	.then(() => console.log(6));
+  .resolve()
+  .then(() => console.log(4))
+  .then(() => console.log(5))
+  .then(() => console.log(6))
